@@ -118,6 +118,15 @@ class Keywords:
         elem = json_obj['value']['ELEMENT']
         return elem
 
+    def find_location(self, value, using='name', session_id=None):
+        if session_id is None:
+            session_id = self.get_current_session_id()
+        res = execute.post(self.path + '/session/' + session_id + '/location',
+                           json={'using': using, 'sessionId': session_id, 'value': value})
+        json_obj = json.loads(res.text)
+        elem = json_obj['value']['LOCATION']
+        return elem
+
     def move_to_element(self, elem, session_id=None):
         if session_id is None:
             session_id = self.get_current_session_id()
