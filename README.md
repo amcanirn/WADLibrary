@@ -20,6 +20,12 @@ This library was created to be able to work with multi-window use cases compared
 pip install robotframework-wadlibrary
 ```
 
+Or install forked package
+
+```
+pip install git+https://github.com/amcanirn/WADLibrary.git
+```
+
 ### Setting up WinAppDriver
 
 1. Download Windows Application Driver installer from <https://github.com/Microsoft/WinAppDriver/releases>

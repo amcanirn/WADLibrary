@@ -119,4 +119,7 @@ dmypy.json
 .vscode/
 
 # Results in Demo
+/Demo/log.html
+/Demo/output.xml
+/Demo/report.html
 /Demo/results/*
