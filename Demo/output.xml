@@ -1,56 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.9.0 on win32)" generated="20210609 23:38:12.304" rpa="false">
+<robot generator="Robot 3.2.2 (Python 3.9.0 on win32)" generated="20210610 12:27:36.927" rpa="false">
 <suite id="s1" name="Wadlibrary Location" source="C:\dev\WADLibrary\Demo\wadlibrary_location.robot">
 <kw name="Set Up Driver" library="WADLibrary" type="setup">
-<status status="PASS" starttime="20210609 23:38:12.391" endtime="20210609 23:38:12.405"></status>
+<status status="PASS" starttime="20210610 12:27:37.020" endtime="20210610 12:27:37.025"></status>
 </kw>
 <test id="s1-t1" name="Calculator">
 <kw name="Set Up" library="WADLibrary" type="setup">
-<status status="PASS" starttime="20210609 23:38:12.406" endtime="20210609 23:38:13.080"></status>
+<status status="PASS" starttime="20210610 12:27:37.025" endtime="20210610 12:27:37.697"></status>
 </kw>
 <kw name="Cmd Run" library="Common">
 <arguments>
 <arg>calc.exe</arg>
 </arguments>
-<status status="PASS" starttime="20210609 23:38:13.080" endtime="20210609 23:38:13.089"></status>
+<status status="PASS" starttime="20210610 12:27:37.698" endtime="20210610 12:27:37.702"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1</arg>
 </arguments>
-<msg timestamp="20210609 23:38:14.099" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20210609 23:38:13.090" endtime="20210609 23:38:14.099"></status>
+<msg timestamp="20210610 12:27:38.710" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210610 12:27:37.703" endtime="20210610 12:27:38.710"></status>
 </kw>
 <kw name="Attach To Window" library="WADLibrary">
 <arguments>
 <arg>Calculator</arg>
 <arg>Calculator</arg>
 </arguments>
-<status status="PASS" starttime="20210609 23:38:14.099" endtime="20210609 23:38:14.180"></status>
+<status status="PASS" starttime="20210610 12:27:38.710" endtime="20210610 12:27:38.799"></status>
 </kw>
 <kw name="Find Location" library="WADLibrary">
 <arguments>
+<arg>Name</arg>
 <arg>One</arg>
 </arguments>
-<msg timestamp="20210609 23:38:14.189" level="FAIL">------------------------------------ERROR-------------------------------------
-Status: 103, unknown method
-The requested command matched a known URL but did not match an method for that URL.
+<msg timestamp="20210610 12:27:38.807" level="FAIL">------------------------------------ERROR-------------------------------------
+Status: 32, invalid selector
+Invalid selector: Name
 ------------------------------------------------------------------------------</msg>
-<status status="FAIL" starttime="20210609 23:38:14.180" endtime="20210609 23:38:14.189"></status>
+<status status="FAIL" starttime="20210610 12:27:38.800" endtime="20210610 12:27:38.807"></status>
 </kw>
 <kw name="Clean Up" library="WADLibrary" type="teardown">
-<status status="PASS" starttime="20210609 23:38:14.189" endtime="20210609 23:38:14.195"></status>
+<status status="PASS" starttime="20210610 12:27:38.808" endtime="20210610 12:27:38.813"></status>
 </kw>
-<status status="FAIL" starttime="20210609 23:38:12.405" endtime="20210609 23:38:14.196" critical="yes">------------------------------------ERROR-------------------------------------
-Status: 103, unknown method
-The requested command matched a known URL but did not match an method for that URL.
+<status status="FAIL" starttime="20210610 12:27:37.025" endtime="20210610 12:27:38.814" critical="yes">------------------------------------ERROR-------------------------------------
+Status: 32, invalid selector
+Invalid selector: Name
 ------------------------------------------------------------------------------</status>
 </test>
 <kw name="Tear Down Driver" library="WADLibrary" type="teardown">
-<status status="PASS" starttime="20210609 23:38:14.198" endtime="20210609 23:38:14.204"></status>
+<status status="PASS" starttime="20210610 12:27:38.815" endtime="20210610 12:27:38.821"></status>
 </kw>
-<status status="FAIL" starttime="20210609 23:38:12.304" endtime="20210609 23:38:14.204"></status>
+<status status="FAIL" starttime="20210610 12:27:36.928" endtime="20210610 12:27:38.821"></status>
 </suite>
 <statistics>
 <total>

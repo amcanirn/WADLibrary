@@ -15,5 +15,5 @@ Calculator
     cmd run  calc.exe
     sleep  1
     attach to window  Calculator  Calculator
-    find location  One
+    find location  Name  One
     close window
