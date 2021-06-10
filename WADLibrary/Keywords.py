@@ -79,14 +79,14 @@ class Keywords:
         handle = hex(int(json_obj['value']))
         return handle
 
-    def find_location(self, using, value, session_id=None):
+    def find_location(self, value, using='name', session_id=None):
         if session_id is None:
             session_id = self.get_current_session_id()
-        elem = self.find_element(using=using, value=value, session_id=session_id)
-        loc = execute.get(self.path + '/session/' + session_id + '/element/' + elem + '/location')
-        json_obj = json.loads(loc.text)
-        location = hex(int(json_obj['value']))
-        return location
+        elem = self.find_element(value=value, using=using, session_id=session_id)
+        res = execute.get(self.path + '/session/' + session_id + '/element/' + elem + '/location')
+        json_obj = json.loads(res.text)
+        elem = json_obj['value']
+        return elem
 
     def attach_to_window(self, value, name, using='name', session_id=None):
         if session_id is None:
