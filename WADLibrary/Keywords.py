@@ -79,11 +79,10 @@ class Keywords:
         handle = hex(int(json_obj['value']))
         return handle
 
-    def find_location(self, value, using='name', session_id=None):
+    def find_location(self, element, session_id=None):
         if session_id is None:
             session_id = self.get_current_session_id()
-        elem = self.find_element(value=value, using=using, session_id=session_id)
-        res = execute.get(self.path + '/session/' + session_id + '/element/' + elem + '/location')
+        res = execute.get(self.path + '/session/' + session_id + '/element/' + element + '/location')
         json_obj = json.loads(res.text)
         elem = json_obj['value']
         return elem
@@ -126,6 +125,15 @@ class Keywords:
         json_obj = json.loads(res.text)
         elem = json_obj['value']['ELEMENT']
         return elem
+
+    def find_elements(self, value, using='name', session_id=None):
+        if session_id is None:
+            session_id = self.get_current_session_id()
+        res = execute.post(self.path + '/session/' + session_id + '/elements',
+                           json={'using': using, 'sessionId': session_id, 'value': value})
+        json_obj = json.loads(res.text)
+        elems = json_obj['value']
+        return elems
 
     def move_to_element(self, elem, session_id=None):
         if session_id is None:
