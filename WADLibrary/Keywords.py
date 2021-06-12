@@ -176,7 +176,7 @@ class Keywords:
         elem = self.find_element(value=value, using=using, session_id=session_id)
         self.move_to_element(elem=elem, session_id=session_id)
         self.mouse_click(button='left', session_id=session_id)
-        execute.post(self.path + '/session/' + session_id + '/keys', json={'text': list(text)})
+        execute.post(self.path + '/session/' + session_id + '/keys', json={'value': list(text)})
 
     def send_key(self, value, session_id=None):
         if session_id is None:
