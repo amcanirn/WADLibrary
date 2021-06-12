@@ -170,6 +170,14 @@ class Keywords:
             session_id = self.get_current_session_id()
         execute.post(self.path + '/session/' + session_id + '/keys', json={'value': list(value)})
 
+    def keys_to_element(self, value, text, using='name', session_id=None):
+        if session_id is None:
+            session_id = self.get_current_session_id()
+        elem = self.find_element(value=value, using=using, session_id=session_id)
+        self.move_to_element(elem=elem, session_id=session_id)
+        self.mouse_click(button='left', session_id=session_id)
+        execute.post(self.path + '/session/' + session_id + '/keys', json={'text': list(value)})
+
     def send_key(self, value, session_id=None):
         if session_id is None:
             session_id = self.get_current_session_id()
